@@ -6,7 +6,9 @@ module Sidekiq
       extend self
 
       def active_job?(job_class)
-        job_class <= ::ActiveJob::Base
+        return false if job_class.singleton_class?
+
+        job_class < ::ActiveJob::Base
       end
 
       def sidekiq_job?(job_class)

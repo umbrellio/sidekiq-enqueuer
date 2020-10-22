@@ -36,7 +36,7 @@ module Sidekiq
               end
             end
 
-            redirect "/enqueuer"
+            redirect File.join(root_path, "enqueuer")
           end
         end
         # rubocop:enable Metrics/MethodLength
