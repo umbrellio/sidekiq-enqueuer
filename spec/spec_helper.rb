@@ -2,6 +2,7 @@
 
 require_relative "./setup_simplecov"
 
+Coveralls.wear!
 SimpleCov.start
 
 require "active_job"
