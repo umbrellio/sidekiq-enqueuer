@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler"
-  spec.add_development_dependency "coveralls_reborn"
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rack-test"
@@ -35,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rubocop-config-umbrellio"
   spec.add_development_dependency "sidekiq"
   spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "simplecov-lcov"
   spec.add_development_dependency "sinatra"
   spec.add_development_dependency "timecop"
 end

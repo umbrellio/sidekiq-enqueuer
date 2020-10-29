@@ -1,5 +1,4 @@
-# Sidekiq::Enqueuer
-[![Build Status](https://travis-ci.org/vgarro/sidekiq-enqueuer.svg?branch=vg%2Fconfig-option-and-refactor)](https://travis-ci.org/vgarro/sidekiq-enqueuer)
+# Sidekiq::Enqueuer &middot; [![version](https://badge.fury.io/gh/umbrellio%2Fsidekiq-enqueuer.svg)](https://badge.fury.io/gh/umbrellio%2Fsidekiq-enqueuer) ![build](https://github.com/umbrellio/sidekiq-enqueuer/workflows/build/badge.svg?branch=master) [![coverage](https://coveralls.io/repos/github/umbrellio/sidekiq-enqueuer/badge.svg?branch=master)](https://coveralls.io/github/umbrellio/sidekiq-enqueuer?branch=master)
 
 A Sidekiq Web extension to enqueue/schedule job in Web UI. Support both Sidekiq::Worker and ActiveJob.
 
