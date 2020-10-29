@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.4"
 
   spec.authors = %w[richfisher basherru]
-  spec.email = %w[richfisher.pan@gmail.com dr.bazhenoff2017@yandex.ru]
+  spec.email = %w[richfisher.pan@gmail.com basherru@umbrellio.biz]
   spec.homepage = "https://github.com/umbrellio/sidekiq-enqueuer"
   spec.licenses = ["MIT"]
 
