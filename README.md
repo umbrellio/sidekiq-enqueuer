@@ -1,14 +1,14 @@
 # Sidekiq::Enqueuer &middot; [![version](https://badge.fury.io/gh/umbrellio%2Fsidekiq-enqueuer.svg)](https://badge.fury.io/gh/umbrellio%2Fsidekiq-enqueuer) ![build](https://github.com/umbrellio/sidekiq-enqueuer/workflows/build/badge.svg?branch=master) [![coverage](https://coveralls.io/repos/github/umbrellio/sidekiq-enqueuer/badge.svg?branch=master)](https://coveralls.io/github/umbrellio/sidekiq-enqueuer?branch=master)
 
 A Sidekiq Web extension to enqueue/schedule job in Web UI. Support both Sidekiq::Worker and ActiveJob.
-Based on [richfisher's sidekiq-enqueuer](https://github.com/richfisher/sidekiq-enqueuer)
+Based on [richfisher's sidekiq-enqueuer](https://github.com/richfisher/sidekiq-enqueuer).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "sidekiq-enqueuer"
+gem "sidekiq-enqueuer", github: "umbrellio/sidekiq-enqueuer"
 ```
 
 And then execute:
