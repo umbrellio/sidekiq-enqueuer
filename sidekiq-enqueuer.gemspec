@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.authors = %w[richfisher basherru]
   spec.email = %w[richfisher.pan@gmail.com dr.bazhenoff2017@yandex.ru]
-  spec.homepage = "https://github.com/basherru/sidekiq-enqueuer"
+  spec.homepage = "https://github.com/umbrellio/sidekiq-enqueuer"
   spec.licenses = ["MIT"]
 
   spec.summary = <<-SUMMARY

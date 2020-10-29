@@ -86,5 +86,5 @@ For ActiveJob, enqueing is being done calling the very own `perform_later` insta
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/basherru/sidekiq-enqueuer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/umbrellio/sidekiq-enqueuer.
 
