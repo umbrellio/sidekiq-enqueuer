@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sidekiq-enqueuer (2.2.0)
+    sidekiq-enqueuer (2.2.1)
 
 GEM
   remote: https://rubygems.org/
