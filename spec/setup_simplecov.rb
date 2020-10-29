@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 require "simplecov"
-require "coveralls"
+require "simplecov-lcov"
+
+SimpleCov::Formatter::LcovFormatter.config do |config|
+  config.report_with_single_file = true
+  config.output_directory = "coverage"
+  config.lcov_file_name = "lcov.info"
+end
 
 SimpleCov.configure do
   enable_coverage :line
@@ -11,7 +17,7 @@ SimpleCov.configure do
 
   formatter SimpleCov::Formatter::MultiFormatter.new([
     SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter,
+    SimpleCov::Formatter::LcovFormatter,
   ])
 
   add_group "Worker", "/lib/enqueuer/worker"
