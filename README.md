@@ -1,6 +1,7 @@
 # Sidekiq::Enqueuer &middot; [![version](https://badge.fury.io/gh/umbrellio%2Fsidekiq-enqueuer.svg)](https://badge.fury.io/gh/umbrellio%2Fsidekiq-enqueuer) ![build](https://github.com/umbrellio/sidekiq-enqueuer/workflows/build/badge.svg?branch=master) [![coverage](https://coveralls.io/repos/github/umbrellio/sidekiq-enqueuer/badge.svg?branch=master)](https://coveralls.io/github/umbrellio/sidekiq-enqueuer?branch=master)
 
 A Sidekiq Web extension to enqueue/schedule job in Web UI. Support both Sidekiq::Worker and ActiveJob.
+Based on [richfisher's sidekiq-enqueuer](https://github.com/richfisher/sidekiq-enqueuer)
 
 ## Installation
 
@@ -85,5 +86,19 @@ For ActiveJob, enqueing is being done calling the very own `perform_later` insta
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/umbrellio/sidekiq-enqueuer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/umbrellio/sidekiq-scheduler.
+
+## License
+
+Released under MIT License.
+
+## Authors
+
+Team Umbrellio & [richfisher](mailto:richfisher.pan@gmail.com)
+
+---
+
+<a href="https://github.com/umbrellio/">
+<img style="float: left;" src="https://umbrellio.github.io/Umbrellio/supported_by_umbrellio.svg" alt="Supported by Umbrellio" width="439" height="72">
+</a>
 
