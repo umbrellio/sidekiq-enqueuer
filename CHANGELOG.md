@@ -1,4 +1,12 @@
 # Sidekiq Enqueuer Changes
+2.2.1
+-----------
+
+- Fixed utils namespacing.
+- Setup github workflows to take care of static code analysis, specs and coverage.
+- Added contribution guidelines and code of conduct.
+- Transferred all the contribution credits to umbrellio.
+
 2.2.0
 -----------
 
