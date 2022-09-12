@@ -12,7 +12,7 @@ module Sidekiq
       end
 
       def sidekiq_job?(job_class)
-        job_class.included_modules.include?(::Sidekiq::Worker)
+        job_class.included_modules.include?(::Sidekiq::Worker) && job_class.instance_methods.any? { |method| method.start_with?("perform") }
       end
     end
   end
