@@ -24,7 +24,11 @@ module Sidekiq
 
       def jobs
         configuration.available_jobs.map do |job|
-          Worker::Instance.new(job, async: configuration.async)
+          begin
+            Worker::Instance.new(job, async: configuration.async)
+          rescue => e
+            puts "SJH Sidekiq::Enqueuer - could not load #{job&.inspect} due to #{e&.inspect}"
+          end
         end
       end
     end

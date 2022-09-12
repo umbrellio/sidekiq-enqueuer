@@ -7,8 +7,8 @@ module Sidekiq
         attr_reader :job, :instance_method, :params, :async
 
         def initialize(job, async:)
-          puts "SJH Sidekiq::Enqueuer::Worker::Instance.initialize - job #{job.inspect}"
           @job = job
+          puts "SJH Sidekiq::Enqueuer::Worker::Instance.initialize - job #{@job.inspect}"
           @async = async
           @instance_method = deduce_instance_method
           @params = deduce_params
@@ -35,6 +35,7 @@ module Sidekiq
         # TODO: what if two of this methods exist? which one to pick to figure out params?
         def deduce_instance_method
           [:perform, :perform_in, :perform_async, :perform_at].each do |evaluating_method|
+            puts "SJH Sidekiq::Enqueuer::Worker::Instance.initialize - job #{@job.inspect} - considering #{evaluating_method}"
             return evaluating_method if job.instance_methods.include?(evaluating_method)
           end
           nil
@@ -47,7 +48,11 @@ module Sidekiq
         end
 
         def worker_params
-          job.instance_method(instance_method).parameters
+          begin
+            job.instance_method(instance_method).parameters
+          rescue => e
+            puts "SJH Sidekiq::Enqueuer::Worker::Instance.initialize - job #{job.inspect} - issue with parameters in #{instance_method}, exception: #{e&.inspect}"
+          end
         end
       end
     end
