@@ -7,6 +7,7 @@ module Sidekiq
         attr_reader :job, :instance_method, :params, :async
 
         def initialize(job, async:)
+          put "SJH Sidekiq::Enqueuer::Worker::Instance.initialize - job #{job.inspect}"
           @job = job
           @async = async
           @instance_method = deduce_instance_method
