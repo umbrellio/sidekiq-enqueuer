@@ -13,6 +13,8 @@ require "sidekiq/enqueuer/web_extension/params_parser"
 
 module Sidekiq
   module Enqueuer
+    SIDEKIQ_GTE_8 = Gem::Version.new(Sidekiq::VERSION) >= Gem::Version.new("8.0.0")
+
     class << self
       def configuration
         @configuration ||= Configuration.new
@@ -32,7 +34,23 @@ module Sidekiq
 end
 
 if defined?(Sidekiq::Web)
-  Sidekiq::Web.register Sidekiq::Enqueuer::WebExtension::Loader
-  Sidekiq::Web.tabs["Enqueuer"] = "enqueuer"
-  Sidekiq::Web.settings.locales << File.join(File.dirname(__FILE__), "enqueuer/locales")
+  locales_path = File.join(File.dirname(__FILE__), "enqueuer/locales")
+
+  if Sidekiq::Enqueuer::SIDEKIQ_GTE_8
+    # Sidekiq 8+ uses Web.configure with keyword arguments
+    Sidekiq::Web.configure do |config|
+      config.register(
+        Sidekiq::Enqueuer::WebExtension::Loader,
+        name: "enqueuer",
+        tab: "Enqueuer",
+        index: "enqueuer"
+      )
+    end
+    Sidekiq::Web.locales << locales_path
+  else
+    # Sidekiq 7 and earlier
+    Sidekiq::Web.register(Sidekiq::Enqueuer::WebExtension::Loader)
+    Sidekiq::Web.tabs["Enqueuer"] = "enqueuer"
+    Sidekiq::Web.settings.locales << locales_path
+  end
 end
